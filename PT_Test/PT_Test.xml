@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PT_Test</name>
+    </assembly>
+    <members>
+        <member name="M:PT_Test.Controllers.ClientToolsController.CheckCompatibility(System.String[])">
+            <summary>
+            Checks the supplied part list for compatibility with other parts in stock.
+            </summary>
+            <remarks>
+            Compatible parts are interchangeable, allowing you to select the cheapest part that is right for the job.
+            </remarks>
+            <param name="part_numbers">An array of part numbers.</param>
+            <example>["1234-asdf"]</example>
+            <returns>A dictionary with the supplied part numbers as keys and compatible parts as the values.</returns>
+        </member>
+        <member name="M:PT_Test.Controllers.MockDataController.MockLookup(System.Collections.Generic.List{PT_Test.Models.PartItem})">
+            <summary>
+            The assumption here is that each part could be matched to multiple other parts based on...something.
+            </summary>
+            <param name="part_data">The list of items to be matched.</param>
+            <returns>A dictionary, using the input part numbers as the keys and a list of matching parts for each.</returns>
+        </member>
+        <member name="M:PT_Test.Controllers.MockDataController.MockParts(PT_Test.Models.PartItem,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Generates a list of fake parts.
+            </summary>
+            <param name="base_part">The part for which comparable parts are being looked up.</param>
+            <param name="random_count">Set to true if the number of parts should be randomized.</param>
+            <param name="max_parts">Max parts to be generated, this value will be used if random_count is false.</param>
+            <param name="min_parts">Min parts to be generated, probably best to be kept at 0.</param>
+            <returns>The list of mocked parts plus the original, sorted by price with the original on top.</returns>
+        </member>
+        <member name="M:PT_Test.Tests.PartsTraderTests.SubmitParts_Test_Pass(System.String)">
+            <summary>
+            Entries without invalid part numbers should not fail.
+            </summary>
+        </member>
+        <member name="M:PT_Test.Tests.PartsTraderTests.SubmitParts_Test_Fail(System.String)">
+            <summary>
+            The presence of invalid data will result in an error message.
+            </summary>
+        </member>
+        <member name="M:PT_Test.Tests.PartsTraderTests.SubmitParts_Test_Exclusion(System.String)">
+            <summary>
+            Fully-excluded entries should result in an empty dataset.
+            </summary>
+        </member>
+    </members>
+</doc>

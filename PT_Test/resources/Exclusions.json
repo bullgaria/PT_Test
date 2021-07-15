@@ -1,0 +1,5 @@
+[
+    { "PartNumber" : "1111-Invoice", "Description" : "Invoice line" },
+    { "PartNumber" : "1234-abcd", "Description" : "Test Part Number" },
+    { "PartNumber" : "9999-charge", "Description" :  "Stealth charge added for rude customers" }
+]
